@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_nav"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.gemslight.wingsstore.fragment.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/login_to_product_list"
+            app:destination="@id/product_list_to_product_detail" />
+        <action
+            android:id="@+id/login_to_register"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/product_list_to_product_detail"
+        android:name="com.gemslight.wingsstore.fragment.product_list.ProductListFragment"
+        android:label="ProductListFragment">
+        <action
+            android:id="@+id/product_list_to_product_detail"
+            app:destination="@id/productDetailFragment" />
+        <action
+            android:id="@+id/product_list_to_checkout"
+            app:destination="@id/checkoutPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.gemslight.wingsstore.fragment.ProductDetailFragment"
+        android:label="ProductDetailFragment">
+
+        <argument
+            android:name="product"
+            app:argType="com.gemslight.common.entity.ProductEntity" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkoutPageFragment"
+        android:name="com.gemslight.wingsstore.fragment.CheckoutPageFragment"
+        android:label="CheckoutPageFragment" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.gemslight.wingsstore.fragment.RegisterFragment"
+        android:label="RegisterFragment">
+        <action
+            android:id="@+id/register_to_login"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>

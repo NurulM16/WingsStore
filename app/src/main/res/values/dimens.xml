@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="headerTextSize">22sp</dimen>
+    <dimen name="defaultTextSize">12sp</dimen>
+    <dimen name="productTextSize">27sp</dimen>
+    <dimen name="productDetailTextSize">22sp</dimen>
+    <dimen name="buttonRadius">20dp</dimen>
+    <dimen name="loginViewsMargin">20dp</dimen>
+    <dimen name="cardRadius">20dp</dimen>
+</resources>

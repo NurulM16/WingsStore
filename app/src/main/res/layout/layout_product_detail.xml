@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        style="@style/parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            style="@style/viewParent"
+            android:layout_gravity="center"
+            android:layout_marginTop="120dp"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/productName"
+            style="@style/viewParent"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="So Klin Liquid"
+            android:textColor="@color/black"
+            android:textSize="@dimen/productTextSize"
+            android:textStyle="bold" />
+
+
+        <GridLayout
+            style="@style/viewParent"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:columnCount="2"
+            android:rowCount="3">
+
+            <TextView
+                style="@style/textViewGrid"
+                android:text="@string/price" />
+
+            <TextView
+                android:id="@+id/productPrice"
+                style="@style/textViewGrid"
+                android:text="Rp. 18.000,00" />
+
+            <TextView
+                style="@style/textViewGrid"
+                android:text="@string/dimension" />
+
+            <TextView
+                android:id="@+id/productDimension"
+                style="@style/textViewGrid"
+                android:text="13 cm X 10 cm" />
+
+            <TextView
+                style="@style/textViewGrid"
+                android:text="@string/price_unit" />
+
+            <TextView
+                style="@style/textViewGrid"
+                android:text="PCS" />
+        </GridLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_buy"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:text="@string/btn_buy"
+            android:textSize="22sp"
+            app:cornerRadius="@dimen/buttonRadius" />
+
+
+    </LinearLayout>
+
+
+</layout>
