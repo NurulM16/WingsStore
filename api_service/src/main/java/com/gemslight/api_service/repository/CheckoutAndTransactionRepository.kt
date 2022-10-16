@@ -87,8 +87,4 @@ class CheckoutAndTransactionRepository(
             checkoutDao.deleteAllCart()
         }
     }
-
-    fun getAllTransactionHeader() = checkoutDao.getAllTransactionHeader(userStorageService.getUser())
-
-    fun getAllTransactionDetail(documentNumber: Int) = checkoutDao.getAllTransactionDetail(documentNumber)
 }

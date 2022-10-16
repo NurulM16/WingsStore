@@ -26,10 +26,4 @@ interface CheckoutDao {
     @Query("DELETE from checkout")
     fun deleteAllCart()
 
-    @Query("SELECT * from transaction_header WHERE user=:user")
-    fun getAllTransactionHeader(user: String): LiveData<List<Transaction>>
-
-    @Transaction
-    @Query("SELECT * from transaction_detail WHERE document_number=:documentNumber")
-    fun getAllTransactionDetail(documentNumber: Int): LiveData<ProductCartCheckout>
 }
