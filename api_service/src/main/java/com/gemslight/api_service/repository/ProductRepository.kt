@@ -25,7 +25,7 @@ class ProductRepository(
                             "SKUSKILNP",
                             "So Klin pewangi",
                             15000.00,
-                            "Rp. ", 0.1,
+                            "Rp. ", 10.0,
                             "13 cm x 10 cm",
                             "PCS", R.drawable.img_soklin_pewangi
                         )
