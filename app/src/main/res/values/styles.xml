@@ -22,12 +22,21 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="secondParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
     <style name="loginParent" parent="parent">
         <item name="android:layout_height">match_parent</item>
         <item name="background">@color/loginBgColor</item>
     </style>
 
     <style name="linearParent" parent="parent">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="linearBackground" parent="secondParent">
         <item name="android:orientation">vertical</item>
     </style>
 

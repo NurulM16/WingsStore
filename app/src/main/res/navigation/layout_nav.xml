@@ -2,18 +2,39 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout_nav"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.gemslight.wingsstore.fragment.splash.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/splash_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/splash_to_product_list"
+            app:destination="@id/product_list_to_product_detail"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.gemslight.wingsstore.fragment.LoginFragment"
+        android:name="com.gemslight.wingsstore.fragment.auth.LoginFragment"
         android:label="LoginFragment">
         <action
             android:id="@+id/login_to_product_list"
-            app:destination="@id/product_list_to_product_detail" />
+            app:destination="@id/product_list_to_product_detail"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/login_to_register"
-            app:destination="@id/registerFragment" />
+            app:destination="@id/registerFragment"
+            />
+        <action
+            android:id="@+id/login_to_load_login"
+            app:destination="@id/loadFragment" />
     </fragment>
     <fragment
         android:id="@+id/product_list_to_product_detail"
@@ -28,23 +49,29 @@
     </fragment>
     <fragment
         android:id="@+id/productDetailFragment"
-        android:name="com.gemslight.wingsstore.fragment.ProductDetailFragment"
+        android:name="com.gemslight.wingsstore.fragment.product_detail.ProductDetailFragment"
         android:label="ProductDetailFragment">
 
         <argument
             android:name="product"
             app:argType="com.gemslight.common.entity.ProductEntity" />
+
     </fragment>
     <fragment
         android:id="@+id/checkoutPageFragment"
-        android:name="com.gemslight.wingsstore.fragment.CheckoutPageFragment"
+        android:name="com.gemslight.wingsstore.fragment.checkout_page.CheckoutPageFragment"
         android:label="CheckoutPageFragment" />
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.gemslight.wingsstore.fragment.RegisterFragment"
+        android:name="com.gemslight.wingsstore.fragment.auth.RegisterFragment"
         android:label="RegisterFragment">
         <action
             android:id="@+id/register_to_login"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/loadFragment"
+        android:name="com.gemslight.wingsstore.fragment.auth.LoadLoginFragment"
+        android:label="LoadFragment" />
+
 </navigation>

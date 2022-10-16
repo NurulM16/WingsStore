@@ -2,6 +2,8 @@ package com.gemslight.wingsstore.module
 
 import android.content.Context
 import com.gemslight.api_service.service.database.WingsStoreDB
+import com.gemslight.api_service.service.storage.UserStorageService
+import com.gemslight.api_service.service.storage.UserStorageServiceSharedPreferences
 import com.gemslight.common.ext.AppExecutors
 import dagger.Module
 import dagger.Provides
@@ -27,13 +29,13 @@ class DatabaseModule {
     @Singleton
     fun provideProductDao(wingsStoreDB: WingsStoreDB) = wingsStoreDB.productDao()
 
-//    @Provides
-//    @Singleton
-//    fun provideTransactionHeaderDao(wingsStoreDB: WingsStoreDB) = wingsStoreDB.transactionHeader()
-//
-//    @Provides
-//    @Singleton
-//    fun provideTransactionDetailDao(wingsStoreDB: WingsStoreDB) = wingsStoreDB.transactionDetail()
+    @Provides
+    @Singleton
+    fun provideCheckoutDao(wingsStoreDB: WingsStoreDB) = wingsStoreDB.checkoutDao()
+
+    @Provides
+    @Singleton
+    fun provideUserStorageServiceSharedPreferences(@ApplicationContext context: Context): UserStorageService = UserStorageServiceSharedPreferences(context)
 
     @Provides
     @Singleton

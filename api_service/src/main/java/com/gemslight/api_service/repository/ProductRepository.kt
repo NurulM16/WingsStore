@@ -2,6 +2,7 @@ package com.gemslight.api_service.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
+import com.gemslight.api_service.R
 import com.gemslight.api_service.service.dao.ProductDao
 import com.gemslight.common.entity.ProductEntity
 import com.gemslight.common.ext.AppExecutors
@@ -23,40 +24,40 @@ class ProductRepository(
                         ProductEntity(
                             "SKUSKILNP",
                             "So Klin pewangi",
-                            15000.0,
-                            "IDR",0.1,
+                            15000.00,
+                            "Rp. ", 0.1,
                             "13 cm x 10 cm",
-                            "PCS"
+                            "PCS", R.drawable.img_soklin_pewangi
                         )
                     )
                     productDao.insertProduct(
                         ProductEntity(
                             "GIVBIRU",
                             "GIV Biru",
-                            11000.0,
-                            "IDR", 0.0,
+                            11000.00,
+                            "Rp. ", 0.0,
                             "8 cm x 5 cm",
-                            "PCS"
+                            "PCS", R.drawable.img_giv_biru
                         )
                     )
                     productDao.insertProduct(
                         ProductEntity(
                             "SOKLINLQ",
                             "So Klin Liquid",
-                            18000.0,
-                            "IDR", 0.0,
-                            "15cm x 10cm",
-                            "PCS"
+                            18000.00,
+                            "Rp. ", 0.0,
+                            "15 cm x 10 cm",
+                            "PCS", R.drawable.img_soklin_liquid
                         )
                     )
                     productDao.insertProduct(
                         ProductEntity(
                             "GIVKUNING",
                             "Giv Kuning",
-                            10000.0,
-                            "IDR",0.0,
-                            "8cm x 5cm",
-                            "PCS"
+                            10000.00,
+                            "Rp. ", 0.0,
+                            "8 cm x 5 cm",
+                            "PCS", R.drawable.img_giv_kuning
                         )
                     )
                 }

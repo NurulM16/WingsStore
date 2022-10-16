@@ -11,7 +11,7 @@ import com.gemslight.common.entity.LoginEntity
 @Dao
 interface LoginDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertUser(login: LoginEntity)
+    fun registerUser(login: LoginEntity)
 
     @Query("SELECT * from login WHERE user = :user")
     fun getUser(user: String): LiveData<LoginEntity>

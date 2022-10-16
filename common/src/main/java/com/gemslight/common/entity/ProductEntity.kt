@@ -24,5 +24,8 @@ class ProductEntity(
     @field:ColumnInfo(name = "dimension")
     val dimension: String,
     @field:ColumnInfo(name = "unit")
-    val unit: String
+    val unit: String,
+    @ColumnInfo(name = "Image")
+    val image: Int?
+
 ) : Parcelable

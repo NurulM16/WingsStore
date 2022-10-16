@@ -8,11 +8,12 @@ import java.time.LocalDate
 
 @Entity(tableName = "transaction_detail")
 class TransactionDetailEntity(
-    @PrimaryKey
+
     @field:ColumnInfo(name = "document_code")
     val documentCode: String,
+    @PrimaryKey(autoGenerate = true)
     @field:ColumnInfo(name = "document_number")
-    val documentNumber: String,
+    val documentNumber: Int,
     @field:ColumnInfo(name = "product_code")
     val productCode: String,
     @field:ColumnInfo(name = "price")

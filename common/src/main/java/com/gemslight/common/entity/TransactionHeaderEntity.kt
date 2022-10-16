@@ -8,11 +8,11 @@ import java.time.LocalDate
 
 @Entity(tableName = "transaction_header")
 class TransactionHeaderEntity(
-    @PrimaryKey
     @field:ColumnInfo(name = "document_code")
     val documentCode: String,
+    @PrimaryKey(autoGenerate = true)
     @field:ColumnInfo(name = "document_number")
-    val documentNumber: String,
+    val documentNumber: Int,
     @field:ColumnInfo(name = "user")
     val user: String,
     @field:ColumnInfo(name = "total")

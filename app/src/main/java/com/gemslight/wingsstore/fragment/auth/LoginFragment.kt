@@ -1,5 +1,6 @@
-package com.gemslight.wingsstore.fragment
+package com.gemslight.wingsstore.fragment.auth
 
+import android.content.Intent
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -19,32 +20,34 @@ class LoginFragment : BaseFragment<LoginViewModel, LayoutLoginBinding>() {
 
     override fun initBinding(binding: LayoutLoginBinding) = with(binding) {
         super.initBinding(binding)
+        toRegister.setOnClickListener {
+            findNavController().navigate(LoginFragmentDirections.loginToRegister())
+        }
         btnLogin.setOnClickListener {
             val inputUsername = editTextUsername.text
             val inputPassword = editTextPassword.text
             if (inputUsername.isNullOrEmpty() || inputPassword.isNullOrEmpty()) {
                 Toast.makeText(
                     requireContext(),
-                    "username and password can not blank",
+                    "username and password can't blank",
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
                 vm.loginUser(
-                    loginEntity = LoginEntity(
+                    LoginEntity(
                         inputUsername.toString(),
                         inputPassword.toString()
                     )
                 )
             }
+            findNavController().navigate(LoginFragmentDirections.loginToLoadLogin())
         }
         observeLiveData()
-        toRegister.setOnClickListener {
-            findNavController().navigate(LoginFragmentDirections.loginToRegister())
-        }
+
     }
 
-    fun observeLiveData() {
-        vm.loginDataState?.observe(viewLifecycleOwner) {
+    private fun observeLiveData() {
+        vm.loginDataState.observe(viewLifecycleOwner) {
             when (it) {
                 is ResponseSuccess -> {
                     Toast.makeText(this.context, "login Success", Toast.LENGTH_LONG).show()

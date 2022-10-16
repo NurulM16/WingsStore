@@ -14,14 +14,15 @@ class ProductListFragment : BaseFragment<ProductListViewModel, LayoutProductList
     override val vm: ProductListViewModel by viewModels()
     override val layoutResourceid: Int = R.layout.layout_product_list
     private val adapter = ProductListAdapter {
-        findNavController().navigate(ProductListFragmentDirections.productListToProductDetail())
+        findNavController().navigate(ProductListFragmentDirections.productListToProductDetail(it))
     }
 
     override fun initBinding(binding: LayoutProductListBinding) = with(binding) {
         super.initBinding(binding)
         recyclerViewProductList.adapter = adapter
         observeLiveData()
-        btnBuy.setOnClickListener {
+        callback()
+        btnCheckout.setOnClickListener {
             findNavController().navigate(ProductListFragmentDirections.productListToCheckout())
         }
 

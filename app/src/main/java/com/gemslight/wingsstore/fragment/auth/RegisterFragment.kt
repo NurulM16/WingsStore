@@ -1,4 +1,4 @@
-package com.gemslight.wingsstore.fragment
+package com.gemslight.wingsstore.fragment.auth
 
 import android.widget.Toast
 import androidx.fragment.app.viewModels
@@ -24,12 +24,12 @@ class RegisterFragment : BaseFragment<RegisterViewModel, LayoutRegisterBinding>(
             if (inputUsername.isNullOrEmpty() || inputPassword.isNullOrEmpty()) {
                 Toast.makeText(
                     requireContext(),
-                    "username and password can not blank",
+                    "username and password can't blank",
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
                 vm.registerUser(
-                    loginEntity = LoginEntity(
+                    LoginEntity(
                         inputUsername.toString(),
                         inputPassword.toString()
                     )
