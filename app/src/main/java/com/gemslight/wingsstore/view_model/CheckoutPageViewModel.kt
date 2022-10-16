@@ -39,4 +39,10 @@ class CheckoutPageViewModel @Inject constructor(
             checkoutAndTransactionRepository.getTotal(subTotalPriceProduct.keys.toList())
         )
     }
+
+    fun deleteAllCart() {
+        viewModelScope.launch {
+            checkoutAndTransactionRepository.deleteAllCart()
+        }
+    }
 }

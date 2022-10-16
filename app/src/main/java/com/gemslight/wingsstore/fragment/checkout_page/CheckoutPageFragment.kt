@@ -27,11 +27,21 @@ class CheckoutPageFragment : BaseFragment<CheckoutPageViewModel, LayoutCheckoutP
         binding.recyclerViewCheckout.adapter = adapter
         observeLiveData()
         binding.btnConfirm.setOnClickListener {
-            vm.insertProductCheckoutToTransactionDetail()
-            Toast.makeText(requireContext(), "Checkout Successfully", Toast.LENGTH_SHORT).show()
+            if (vm.subTotalPriceProduct.isEmpty()) {
+                Toast.makeText(
+                    requireContext(),
+                    "Please add product",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                vm.insertProductCheckoutToTransactionDetail()
+                vm.deleteAllCart()
+                vm.subTotalPriceProduct.clear()
+                Toast.makeText(requireContext(), "Transaction Successfully", Toast.LENGTH_SHORT)
+                    .show()
+                findNavController().popBackStack()
+            }
 
-            findNavController().popBackStack()
-            Toast.makeText(requireContext(), "Transaction Successfully", Toast.LENGTH_SHORT).show()
         }
     }
 
