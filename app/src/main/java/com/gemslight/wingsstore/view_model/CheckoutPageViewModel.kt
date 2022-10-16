@@ -7,7 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.gemslight.api_service.repository.CheckoutAndTransactionRepository
 import com.gemslight.common.base.BaseViewModel
-import com.gemslight.common.entity.ProductCartCheckout
+import com.gemslight.common.entity.relational.ProductCartCheckout
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

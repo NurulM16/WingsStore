@@ -8,6 +8,7 @@ import com.gemslight.api_service.service.dao.CheckoutDao
 import com.gemslight.api_service.service.dao.LoginDao
 import com.gemslight.api_service.service.dao.ProductDao
 import com.gemslight.common.entity.*
+import com.gemslight.common.entity.relational.ProductCartEntity
 
 
 @Database(
